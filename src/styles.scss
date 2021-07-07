@@ -1,1 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+.container {
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 20px 30px;
+}
