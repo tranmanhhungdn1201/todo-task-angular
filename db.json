@@ -11,6 +11,18 @@
       "text": "Doctors Appointment 3",
       "day": "May 5th at 2:30 pm",
       "reminder": false
+    },
+    {
+      "text": "Hang out",
+      "day": "thuws 2 19:00",
+      "reminder": false,
+      "id": 4
+    },
+    {
+      "text": "test1",
+      "day": "12321",
+      "reminder": true,
+      "id": 5
     }
   ]
 }
