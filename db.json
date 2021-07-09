@@ -21,8 +21,13 @@
     {
       "text": "test1",
       "day": "12321",
-      "reminder": true,
+      "reminder": false,
       "id": 5
+    },
+    {
+      "text": "s",
+      "reminder": false,
+      "id": 6
     }
   ]
 }

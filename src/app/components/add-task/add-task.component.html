@@ -2,6 +2,7 @@
   class="form-add-task"
   (ngSubmit)="onSubmit()"
   *ngIf="showForm"
+  #formAddTask="ngForm"
 >
   <div class="form-group">
     <label for="text">Task</label>
@@ -12,7 +13,12 @@
       name="text"
       id="text"
       placeholder="Add Task"
+      #textInput="ngModel"
+      required
     >
+  </div>
+  <div class="alert alert-danger" [hidden]="textInput.valid || textInput.pristine">
+    Text is required
   </div>
   <div class="form-group">
     <label for="day">Day & TIme</label>
@@ -22,8 +28,13 @@
       class="form-control"
       name="day"
       id="day"
+      #dayInput="ngModel"
       placeholder="Add Day & TIme"
+      required
     >
+  </div>
+  <div class="alert alert-danger" [hidden]="dayInput.valid || dayInput.pristine">
+    Day is required
   </div>
   <div class="form-group">
     <label class="form-check-label" for="exampleCheck1">Set Reminder</label>
@@ -35,12 +46,12 @@
       id="reminder"
     >
   </div>
-  {{ text }}
   <div class="form-group">
     <input
       type="submit"
       value="Save Task"
       class="btn btn-success"
+      [disabled]="!formAddTask.form.valid"
     >
   </div>
 </form>

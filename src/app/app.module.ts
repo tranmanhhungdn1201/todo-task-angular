@@ -16,7 +16,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SearchTaskComponent } from './components/search-task/search-task.component';
 
 const appRoutes: Routes = [
-  // {path: '', component: TasksComponent},
+  {path: '', component: TasksComponent},
   {path: 'about', component: AboutComponent},
 ]
 @NgModule({

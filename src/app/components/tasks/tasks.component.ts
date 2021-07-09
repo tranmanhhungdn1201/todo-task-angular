@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../../services/task.service';
 import { Observable, Subscription, Subject} from 'rxjs';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { Task } from '../../Task';
 
 @Component({
@@ -10,14 +11,16 @@ import { Task } from '../../Task';
 })
 export class TasksComponent implements OnInit {
   tasks : Task[] = [];
-  queryString: string = '';
   subscription: Subscription;
 
   constructor(private taskService: TaskService) {
     this.subscription = this.taskService
       .onSearch()
+      .pipe(
+        debounceTime(500),
+        distinctUntilChanged()
+      )
       .subscribe(query => {
-        this.queryString = query;
         this.searchTask(query);
       });
   }
